@@ -1,0 +1,15 @@
+<div
+  class="flex h-screen w-screen bg-[#2a2b2e] flex-col"
+  [ngStyle]="{filter: openedMenuType ? 'blur(5px)' : null}"
+  [ngClass]="{'disabled-div': !!openedMenuType}"
+>
+  <app-people></app-people>
+  <app-meeting-controls (goToMenu)="showOpenedMenu($event)"></app-meeting-controls>
+</div>
+
+<ng-container *ngIf="openedMenuType">
+  <div class="absolute top-[5vh] left-[5vw] z-100 bg-white text-center p-4 w-[90vw] h-[90vh]">
+    <p>Вітаємо у <span class="font-bold">{{openedMenuType}}</span>!</p>
+    <span class="absolute right-0 top-0 text-black p-2 cursor-pointer" (click)="openedMenuType = null">&#9587;</span>
+  </div>
+</ng-container>

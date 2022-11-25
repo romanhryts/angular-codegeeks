@@ -1,0 +1,6 @@
+<div class="h-[90%] grid grid-cols-4 justify-center items-center gap-4 pt-4 px-4">
+  <ng-container *ngIf="people$ | async as people">
+    <app-person *ngFor="let person of people; let i = index" [person]="person" [isSpeaking]="i === 3"></app-person>
+    <app-person [person]="{name: 'You', imagePath: '/assets/images/you.jpeg'}"></app-person>
+  </ng-container>
+</div>

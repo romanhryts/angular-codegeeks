@@ -1,0 +1,26 @@
+<div class="relative cursor-pointer rounded-md h-[230px]">
+  <ng-container *ngIf="person && !isLoading">
+    <img
+      class="w-full h-auto max-h-full rounded-md object-fill"
+      [src]="person.imagePath"
+      [alt]="person.name"
+      [ngStyle]="{border: isSpeaking && '4px solid #2684FC'}"
+      (click)="onImageClick()"
+    >
+    <h3 class="absolute bottom-2 left-3 text-amber-50 font-bold">{{person.name}}</h3>
+    <span
+      *ngIf="isSpeaking"
+      class="material-symbols-outlined absolute top-3 right-3 bg-[#2684FC] rounded-2xl p-1 text-[17px]"
+    >graphic_eq</span>
+  </ng-container>
+  <ng-container *ngIf="isLoading">
+    <p class="text-amber-50 h-full text-center pt-[25%]">Loading...</p>
+  </ng-container>
+</div>
+
+
+<ng-template [ngIf]="person === null">
+  <div class="text-amber-50">
+    Person is null. Please provide a person.
+  </div>
+</ng-template>

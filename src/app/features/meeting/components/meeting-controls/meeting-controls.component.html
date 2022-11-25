@@ -1,0 +1,39 @@
+<div class="text-amber-50 px-6 flex items-center h-[10vh] flex justify-between">
+  <h2 class="font-bold">Team meeting</h2>
+
+  <div class="flex gap-4 items-center text-base">
+    <span class="material-symbols-outlined">mic</span>
+    <span class="material-symbols-outlined">videocam</span>
+    <span class="material-symbols-outlined">closed_caption</span>
+    <span class="material-symbols-outlined hand">pan_tool</span>
+    <span class="material-symbols-outlined">present_to_all</span>
+    <span class="material-symbols-outlined"
+          (click)="toggleShowMoreVisibility()"
+          appDocumentClickDetect (closeMenuEvent)="showMore = false"
+    >more_vert</span>
+    <span class="material-symbols-outlined call">call_end</span>
+  </div>
+
+  <ng-container *ngIf="showMore">
+    <div class="absolute left-[48.8rem]">
+      <app-meeting-menu (menuOptionClick)="setMenuOption($event)"></app-meeting-menu>
+    </div>
+  </ng-container>
+
+  <div class="flex gap-2 additional-controls">
+    <span class="material-symbols-outlined">info</span>
+    <span class="material-symbols-outlined">group</span>
+    <span class="material-symbols-outlined">chat</span>
+    <span class="material-symbols-outlined voicemail">voicemail</span>
+  </div>
+
+  <ng-container *ngIf="activeMenuOption">
+    <div class="absolute z-30 right-2">
+      <app-menu-option-submitter
+        [menuItem]="activeMenuOption"
+        (closeSubmitter)="onCloseSubmitter()"
+        (submitSubmitter)="onGoToMenu()"
+      ></app-menu-option-submitter>
+    </div>
+  </ng-container>
+</div>

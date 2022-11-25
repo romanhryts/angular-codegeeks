@@ -1,0 +1,30 @@
+span {
+  background-color: #404040;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.hand {
+  padding: 8px 12px 8px 8px;
+}
+
+.call {
+  background-color: #E94235;
+  border-radius: 48%;
+  padding: 8px 14px;
+}
+
+.voicemail {
+  transform: rotate(180deg);
+}
+
+/*span:hover {*/
+/*  opacity: .7;*/
+/*  transition: 0.3s ease-in-out;*/
+/*}*/
+
+.additional-controls span {
+  background-color: transparent;
+  font-size: 20px;
+}

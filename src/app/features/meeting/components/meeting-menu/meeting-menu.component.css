@@ -1,0 +1,33 @@
+:host {
+  position: absolute;
+  bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 15px 20px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.material-symbols-outlined {
+  color: black;
+  font-size: 20px;
+}
+
+p {
+  color: #282828;
+}
+
+p:hover {
+  color: #2684FC;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}

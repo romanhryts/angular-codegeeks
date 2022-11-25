@@ -1,0 +1,38 @@
+<div class="flex flex-col bg-white text-black wrapper rounded-md">
+
+  <div class="menu-header">
+    <ng-container *ngFor="let menuItem of headerMenuItems">
+      <p class="flex gap-[10px] items-center">
+        <span class="material-symbols-outlined">{{menuItem.icon}}</span>&nbsp;
+        <span (click)="onMenuOptionClick($event.target)">{{menuItem.text}}</span>
+      </p>
+    </ng-container>
+  </div>
+  <hr>
+
+  <div class="menu-main">
+    <ng-container *ngFor="let menuItem of mainMenuItems">
+      <p class="flex gap-[10px] items-center">
+        <span class="material-symbols-outlined">{{menuItem.icon}}</span>&nbsp;
+        <span (click)="onMenuOptionClick($event.target)">{{menuItem.text}}</span>
+      </p>
+    </ng-container>
+  </div>
+  <hr>
+
+  <div class="menu-footer">
+    <ng-container *ngFor="let menuItem of footerMenuItems">
+      <p class="flex gap-[10px] items-center">
+        <span class="material-symbols-outlined">{{menuItem.icon}}</span>&nbsp;
+        <span (click)="onMenuOptionClick($event.target)">{{menuItem.text}}</span>
+      </p>
+    </ng-container>
+  </div>
+
+</div>
+
+<!--<app-menu-option-submitter-->
+<!--  class="absolute right-1 bottom-1"-->
+<!--  *ngIf="showOptionSubmitter"-->
+<!--  [menuItem]="chosenMenuItem"-->
+<!--&gt;</app-menu-option-submitter>-->
